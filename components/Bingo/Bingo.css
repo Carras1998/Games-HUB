@@ -1,0 +1,17 @@
+#bingo {
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+#bingo #current-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+}
+
+#bingo button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}

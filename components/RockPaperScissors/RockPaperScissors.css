@@ -1,0 +1,10 @@
+#rock-paper-scissors {
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+#rock-paper-scissors button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
