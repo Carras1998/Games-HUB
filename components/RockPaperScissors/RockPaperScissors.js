@@ -9,6 +9,7 @@ export default function RockPaperScissors() {
   const rockPaperScissorsElement = document.createElement('div')
   rockPaperScissorsElement.id = 'rock-paper-scissors'
   rockPaperScissorsElement.innerHTML = `
+  <h1 class="game-title">Piedra Papel Tijeras</h1>
     <p id="user-choice">Elección del usuario: ${userChoice}</p>
     <p id="cpu-choice">Elección de la CPU: ${cpuChoice}</p>
     <p id="result">Resultado: ${result}</p>
@@ -56,5 +57,5 @@ export default function RockPaperScissors() {
     document.getElementById('result').textContent = 'Resultado: ' + result
   }
 
-  return rockPaperScissorsElement.outerHTML
+  return rockPaperScissorsElement
 }

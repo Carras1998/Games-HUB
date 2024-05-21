@@ -1,0 +1,17 @@
+footer {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+@media (max-width: 425px) {
+  footer {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  footer {
+    font-size: 16px;
+  }
+}

@@ -1,17 +1,92 @@
 #bingo {
+  text-align: center;
   padding: 20px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto 25px;
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#bingo #current-number {
-  font-size: 24px;
-  font-weight: bold;
-  color: red;
+#current-number {
+  font-size: 2em;
+  margin-bottom: 1em;
 }
 
+.number-list {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  max-width: 400px;
+  margin: 0 auto;
+}
 #bingo button {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #4caf50;
+  margin-bottom: 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#bingo button:hover {
+  background-color: #45a049;
+}
+
+.number {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: default;
+}
+
+.number.marked {
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #bingo {
+    font-size: 16px;
+    max-width: 400px;
+  }
+
+  #bingo button {
+    font-size: 14px;
+  }
+
+  .number-list .number {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 425px) {
+  #bingo {
+    font-size: 14px;
+    max-width: 300px;
+  }
+
+  #bingo button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .number-list .number {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+  }
 }

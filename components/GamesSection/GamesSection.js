@@ -5,9 +5,9 @@ import Bingo from '../Bingo/Bingo'
 export default function GamesSection() {
   return `
     <div id="games-section">
-      ${TicTacToe()}
-      ${RockPaperScissors()}
-      ${Bingo()}
+    ${TicTacToe()}
+    ${RockPaperScissors()}
+    ${Bingo()}
     </div>
   `
 }

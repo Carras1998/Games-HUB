@@ -1,10 +1,53 @@
 #rock-paper-scissors {
   padding: 20px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  text-align: center;
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+#rock-paper-scissors p {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
 #rock-paper-scissors button {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#rock-paper-scissors button:hover {
+  background-color: #45a049;
+}
+@media (max-width: 768px) {
+  #rock-paper-scissors p {
+    font-size: 16px;
+  }
+
+  #rock-paper-scissors button {
+    font-size: 18px;
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 425px) {
+  #rock-paper-scissors p {
+    font-size: 14px;
+  }
+
+  #rock-paper-scissors button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
 }

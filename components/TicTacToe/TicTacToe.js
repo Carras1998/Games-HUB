@@ -8,7 +8,7 @@ export default function TicTacToe() {
   const ticTacToeElement = document.createElement('div')
   ticTacToeElement.classList.add('tic-tac-toe')
   ticTacToeElement.innerHTML = `
-    <h2>Tres en Raya</h2>
+  <h1 class="game-title">Tres en Raya</h1>
     <div class="board">
       <div class="row">
         <div class="cell" data-cell-index="0"></div>
@@ -97,5 +97,5 @@ export default function TicTacToe() {
     })
   }
 
-  return ticTacToeElement.outerHTML
+  return ticTacToeElement
 }
