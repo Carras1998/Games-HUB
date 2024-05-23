@@ -10,14 +10,51 @@ document.addEventListener('DOMContentLoaded', function () {
   const app = document.getElementById('app')
   app.innerHTML = `
     ${Header()}
-    ${GamesSection()}
+    <div id="main-content">
+      ${GamesSection()}
+    </div>
     ${Footer()}
   `
 
-  const ticTacToeElement = document.querySelector('#games-section')
-  ticTacToeElement.append(TicTacToe())
-  const rockPaperScissorsElement = document.querySelector('#games-section')
-  rockPaperScissorsElement.append(RockPaperScissors())
-  const bingoElement = document.querySelector('#games-section')
-  bingoElement.append(Bingo())
+  document
+    .getElementById('ticTacToeBtn')
+    .addEventListener('click', () => loadGame('TicTacToe'))
+  document
+    .getElementById('rockPaperScissorsBtn')
+    .addEventListener('click', () => loadGame('RockPaperScissors'))
+  document
+    .getElementById('bingoBtn')
+    .addEventListener('click', () => loadGame('Bingo'))
 })
+
+function loadGame(game) {
+  const mainContent = document.getElementById('main-content')
+  mainContent.innerHTML = `
+    <button id="backBtn">Regresar al inicio</button>
+  `
+
+  document.getElementById('backBtn').addEventListener('click', () => {
+    mainContent.innerHTML = GamesSection()
+    document
+      .getElementById('ticTacToeBtn')
+      .addEventListener('click', () => loadGame('TicTacToe'))
+    document
+      .getElementById('rockPaperScissorsBtn')
+      .addEventListener('click', () => loadGame('RockPaperScissors'))
+    document
+      .getElementById('bingoBtn')
+      .addEventListener('click', () => loadGame('Bingo'))
+  })
+
+  switch (game) {
+    case 'TicTacToe':
+      mainContent.append(TicTacToe())
+      break
+    case 'RockPaperScissors':
+      mainContent.append(RockPaperScissors())
+      break
+    case 'Bingo':
+      mainContent.append(Bingo())
+      break
+  }
+}

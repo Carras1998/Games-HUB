@@ -1,13 +1,15 @@
-import TicTacToe from '../TicTacToe/TicTacToe'
-import RockPaperScissors from '../RockPaperScissors/RockPaperScissors'
-import Bingo from '../Bingo/Bingo'
-
 export default function GamesSection() {
   return `
     <div id="games-section">
-    ${TicTacToe()}
-    ${RockPaperScissors()}
-    ${Bingo()}
+      <button id="ticTacToeBtn" class="game-btn">
+        <span>Tres en Raya</span>
+      </button>
+      <button id="rockPaperScissorsBtn" class="game-btn">
+        <span>Piedra Papel Tijeras</span>
+      </button>
+      <button id="bingoBtn" class="game-btn">
+        <span>Bingo</span>
+      </button>
     </div>
   `
 }

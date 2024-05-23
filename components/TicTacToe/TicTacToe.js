@@ -1,4 +1,5 @@
 import './TicTacToe.css'
+import { Fireworks } from 'fireworks-js'
 
 export default function TicTacToe() {
   let board = ['', '', '', '', '', '', '', '', '']
@@ -50,6 +51,9 @@ export default function TicTacToe() {
     if (checkWin() || checkDraw()) {
       gameActive = false
       displayMessage(checkWin() ? `${currentPlayer} ha ganado!` : '¡Empate!')
+      if (checkWin()) {
+        launchFireworks()
+      }
       return
     }
 
@@ -95,6 +99,49 @@ export default function TicTacToe() {
     cells.forEach((cell) => {
       cell.textContent = ''
     })
+  }
+
+  function launchFireworks() {
+    const fireworksContainer = document.createElement('div')
+    fireworksContainer.style.position = 'fixed'
+    fireworksContainer.style.top = '0'
+    fireworksContainer.style.left = '0'
+    fireworksContainer.style.width = '100%'
+    fireworksContainer.style.height = '100%'
+    fireworksContainer.style.pointerEvents = 'none'
+    document.body.appendChild(fireworksContainer)
+
+    const fireworks = new Fireworks(fireworksContainer, {
+      autoresize: true,
+      opacity: 0.5,
+      acceleration: 1.05,
+      friction: 0.97,
+      gravity: 1.5,
+      particles: 150,
+      trace: 3,
+      explosion: 5,
+      boundaries: {
+        x: 50,
+        y: 50,
+        width: fireworksContainer.clientWidth,
+        height: fireworksContainer.clientHeight
+      },
+      sound: {
+        enable: true,
+        files: ['explosion0.mp3', 'explosion1.mp3', 'explosion2.mp3'],
+        volume: { min: 4, max: 8 }
+      },
+      delay: { min: 30, max: 60 },
+      brightness: { min: 50, max: 80 },
+      decay: { min: 0.015, max: 0.03 },
+      mouse: { click: false, move: false, max: 1 }
+    })
+    fireworks.start()
+
+    setTimeout(() => {
+      fireworks.stop()
+      document.body.removeChild(fireworksContainer)
+    }, 5000)
   }
 
   return ticTacToeElement
